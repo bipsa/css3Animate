@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<style>
+		#container{
+			position:absolute;
+			width:100px;
+			height:100px;
+			background:red;
+			-moz-transform:scale(1) rotate(0deg);
+			-webkit-transform:scale(1) rotate(0deg);;
+		}
+	</style>
+	<body>
+		<div id="container"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="javascript/com/css3.animate.js"></script>
+		<script>
+			$("#container").cssAnimate({
+				"time" : 1000,
+				"property": ["-moz-transform", "webkit-transform"],
+				"css" : {
+					"-moz-transform" : "scale(1) rotate(15deg)",
+					"-webkit-transform" : "scale(1) rotate(15deg)"
+				},
+				"oncomplete":function(){
+					$("#container").cssAnimate({
+						"time" : 2000,
+						"property": ["-moz-transform", "webkit-transform"],
+						"css" : {
+							"-moz-transform" : "scale(2) rotate(150deg)",
+							"-webkit-transform" : "scale(2) rotate(150deg)"
+						}
+					});
+				}
+			});
+		</script>
+	</body>
+</html>
